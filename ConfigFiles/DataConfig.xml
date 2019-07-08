@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+    <!--URL-->
+    <url>https://www.wikipedia.org/</url>
+    <!--Web-->
+    <BrowserType>CHROME</BrowserType>
+    <chromedriverpath>./Drivers/chromedriver.exe</chromedriverpath>
+    <firefoxdriverpath>./Drivers/geckodriver.exe</firefoxdriverpath>
+    <!--Reports-->
+</Configuration>
