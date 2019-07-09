@@ -1,6 +1,7 @@
 package Extensions;
 
 import Utilities.CommonOps;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -13,11 +14,11 @@ public class update extends CommonOps
 
         try {
             elem.sendKeys(value);
-            System.out.println( "textfield updated ");
+            test.log(LogStatus.PASS,"textfield updated");
         }
         catch (Exception e)
         {
-            System.out.println("failed to update textfield, see details"+e.getMessage());
+            test.log(LogStatus.PASS,"failed to update textfield"+e.getMessage());
             fail("failed to update textfield");
         }
     }
@@ -28,11 +29,11 @@ public class update extends CommonOps
         try {
             Select myValue=new Select(elem);
             myValue.selectByVisibleText(value);
-            System.out.println( "text dropdown  updated ");
+            test.log(LogStatus.PASS,"text drop down updated");
         }
         catch (Exception e)
         {
-            System.out.println("failed to update drop down, see details"+e.getMessage());
+            test.log(LogStatus.PASS,"failed to update dropdown"+e.getMessage());
             fail("failed to update drop down");
         }
     }
