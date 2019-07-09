@@ -5,7 +5,9 @@ import Utilities.CommonOps;
 import Utilities.ManagePages;
 import Workflows.Web_Search;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -18,28 +20,14 @@ public class wikipedia extends CommonOps
     public void StartSession() throws IOException, SAXException, ParserConfigurationException {
         InitBrowser(getData("BrowserType"));
         ManagePages.Init();
-        InstanceReport();
-
     }
 
-    @BeforeMethod
-    public void doBeforeMethid()
-    {
-        InitReportTest("TestName","TestDescription");
-    }
     @AfterClass
     public void CloseSession()
-
     {
-        driver.quit();
-        FinalizeExtentReport();
+    driver.quit();
     }
 
-    @AfterMethod
-    public void doAfterTest()
-    {
-        FinalizeReportTest();
-    }
     @Test
     public void Test01_SearchValue()
     {
