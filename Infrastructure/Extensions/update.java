@@ -33,7 +33,7 @@ public class update extends CommonOps
         }
         catch (Exception e)
         {
-            test.log(LogStatus.PASS,"failed to update dropdown"+e.getMessage());
+            test.log(LogStatus.FAIL,"failed to update dropdown"+e.getMessage());
             fail("failed to update drop down");
         }
     }

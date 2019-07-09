@@ -18,12 +18,12 @@ public class verify extends CommonOps
             }
             catch (Exception e)
             {
-                test.log(LogStatus.PASS,"error with finding text. see details "+e.getMessage());
+                test.log(LogStatus.FAIL,"error with finding text. see details "+e.getMessage());
                 fail("Error with finding text");
             }
             catch (AssertionError e)
             {
-                test.log(LogStatus.PASS,"text not found in element. see details "+e.getMessage());
+                test.log(LogStatus.FAIL,"text not found in element. see details "+e.getMessage());
                 fail("text not found in  element");
             }
     }
