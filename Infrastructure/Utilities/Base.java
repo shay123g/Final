@@ -5,6 +5,8 @@ package Utilities;
 
 import PageObjects_Wikipedia.mainPage;
 import PageObjects_Wikipedia.resultPage;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
 
 /*
@@ -15,4 +17,7 @@ public class Base
     protected static WebDriver driver;
     protected static mainPage WipediaMain;
     protected static resultPage WipediaResults;
+
+    public static ExtentReports extent;
+    public static ExtentTest test;
 }

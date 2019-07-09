@@ -7,4 +7,6 @@
     <chromedriverpath>./Drivers/chromedriver.exe</chromedriverpath>
     <firefoxdriverpath>./Drivers/geckodriver.exe</firefoxdriverpath>
     <!--Reports-->
+    <reportfiltepath>C:/</reportfiltepath>
+    <reportfilename>TestExecution</reportfilename>
 </Configuration>

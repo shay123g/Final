@@ -1,16 +1,12 @@
 <component name="libraryTable">
   <library name="SeleniumWebDriver">
     <CLASSES>
-      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/Selenium3.14/byte-buddy-1.8.15.jar!/" />
-      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/Selenium3.14/client-combined-3.141.59.jar!/" />
-      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/Selenium3.14/commons-exec-1.3.jar!/" />
-      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/Selenium3.14/guava-25.0-jre.jar!/" />
-      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/Selenium3.14/okhttp-3.11.0.jar!/" />
-      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/Selenium3.14/okio-1.14.0.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../libs/Selenium" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/Selenium3.14/client-combined-3.141.59-sources.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../libs/Selenium" />
     </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../libs/Selenium" recursive="false" />
   </library>
 </component>

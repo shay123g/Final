@@ -4,6 +4,7 @@
 package Extensions;
 
 import Utilities.CommonOps;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebElement;
 
 import static org.testng.Assert.fail;
@@ -14,11 +15,11 @@ public class click extends CommonOps
     {
         try {
             elem.click();
-            System.out.println( "element clicked");
+            test.log(LogStatus.PASS,"element clicked");
         }
         catch (Exception e)
         {
-            System.out.println("failed to click on element, see details"+e.getMessage());
+            test.log(LogStatus.FAIL,"failed to click on element, see details"+e.getMessage());
             fail("failed to click on element");
         }
     }

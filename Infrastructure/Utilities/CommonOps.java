@@ -1,5 +1,6 @@
 package Utilities;
 
+import com.relevantcodes.extentreports.ExtentReports;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -60,5 +61,23 @@ public class CommonOps extends Base
         System.setProperty("webdriver.gecko.driver",getData("firefoxdriverpath"));
         WebDriver local_driver=new FirefoxDriver();
         return local_driver;
+    }
+
+    public static void InstanceReport() throws IOException, SAXException, ParserConfigurationException
+    {
+        extent=new ExtentReports(getData("reportfiltepath")+getData("reportfilename")+".html");
+    }
+    public static void InitReportTest(String TestName,String TestDescription)
+    {
+        test=extent.startTest(TestName, TestDescription);
+    }
+    public static void FinalizeReportTest()
+    {
+        extent.endTest(test);
+    }
+    public static void FinalizeExtentReport()
+    {
+        extent.flush();
+        extent.close();
     }
 }
