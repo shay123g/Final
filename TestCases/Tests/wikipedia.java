@@ -4,13 +4,11 @@ import Extensions.verify;
 import Utilities.CommonOps;
 import Utilities.ManagePages;
 import Workflows.Web_Search;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class wikipedia extends CommonOps
 {
@@ -22,7 +20,7 @@ public class wikipedia extends CommonOps
 
     }
     @BeforeMethod
-    public void doBeforeMethid()
+    public void doBeforeMethod()
     {
         InitReportTest("TestName","TestDescription");
     }
@@ -39,7 +37,7 @@ public class wikipedia extends CommonOps
         FinalizeReportTest();
     }
     @Test
-    public void Test01_SearchValue()
+    public void Test01_SearchValue() throws IOException, SAXException, ParserConfigurationException
     {
         Web_Search.Go("Shay Gazit","Español");
         verify.textInElement(WipediaResults.resultField,"Si consideras que este artículo debería existir y dispones de fuentes fiables, puedes crearlo teniendo en cuenta nuestros pilares y, si quieres, usando nuestro asistente.");

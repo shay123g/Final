@@ -11,10 +11,14 @@ package Workflows;
 import Extensions.click;
 import Extensions.update;
 import Utilities.CommonOps;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 public class Web_Search extends CommonOps
 {
-    public static void Go (String searchValue, String Language)
+    public static void Go (String searchValue, String Language) throws IOException, SAXException, ParserConfigurationException
     {
         update.text(WipediaMain.searchBox,searchValue);
         update.dropDownText(WipediaMain.selectLanguage,Language);

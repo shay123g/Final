@@ -6,12 +6,16 @@ package Extensions;
 import Utilities.CommonOps;
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebElement;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 import static org.testng.Assert.fail;
 
 public class click extends CommonOps
 {
-    public static void Go(WebElement elem)
+    public static void Go(WebElement elem) throws ParserConfigurationException, SAXException, IOException
     {
         try {
             elem.click();
@@ -19,7 +23,7 @@ public class click extends CommonOps
         }
         catch (Exception e)
         {
-            test.log(LogStatus.FAIL,"failed to click on element, see details"+e.getMessage());
+            test.log(LogStatus.FAIL,"failed to click on element, see details"+e.getMessage()+ " See screenshot: " +test.addScreenCapture(TakeSS()));
             fail("failed to click on element");
         }
     }

@@ -4,12 +4,16 @@ import Utilities.CommonOps;
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 import static org.testng.Assert.fail;
 
 public class update extends CommonOps
 {
-    public static void text(WebElement elem,String value)
+    public static void text(WebElement elem,String value) throws ParserConfigurationException, SAXException, IOException
     {
 
         try {
@@ -18,12 +22,12 @@ public class update extends CommonOps
         }
         catch (Exception e)
         {
-            test.log(LogStatus.PASS,"failed to update textfield"+e.getMessage());
+            test.log(LogStatus.PASS,"failed to update textfield"+e.getMessage()+ " See screenshot: " +test.addScreenCapture(TakeSS()));
             fail("failed to update textfield");
         }
     }
 
-    public static void dropDownText(WebElement elem,String value)
+    public static void dropDownText(WebElement elem,String value) throws ParserConfigurationException, SAXException, IOException
     {
 
         try {
@@ -33,7 +37,7 @@ public class update extends CommonOps
         }
         catch (Exception e)
         {
-            test.log(LogStatus.FAIL,"failed to update dropdown"+e.getMessage());
+            test.log(LogStatus.FAIL,"failed to update dropdown"+e.getMessage()+ " See screenshot: " +test.addScreenCapture(TakeSS()));
             fail("failed to update drop down");
         }
     }

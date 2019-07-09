@@ -1,6 +1,9 @@
 package Utilities;
 
 import com.relevantcodes.extentreports.ExtentReports;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,6 +15,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -79,4 +84,14 @@ public class CommonOps extends Base
         extent.flush();
         extent.close();
     }
+
+    public static String TakeSS() throws IOException, ParserConfigurationException, SAXException
+    {
+        String filename="Screenshot-"+new SimpleDateFormat(("yyyyMMddHHmmss'.jpg'")).format(new Date());
+        String path= getData("reportfiltepath")+filename;
+        File SrcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(SrcFile, new File(path));
+        return path;
+    }
+
 }
