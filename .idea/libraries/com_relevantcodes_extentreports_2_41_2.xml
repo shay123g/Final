@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="com.relevantcodes:extentreports:2.41.2" type="repository">
+    <properties maven-id="com.relevantcodes:extentreports:2.41.2" />
+    <CLASSES>
+      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/extent2.42.1/extentreports-2.41.2.jar!/" />
+      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/extent2.42.1/jsoup-1.8.3.jar!/" />
+      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/extent2.42.1/sqlite-jdbc-3.8.11.1.jar!/" />
+      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/extent2.42.1/freemarker-2.3.23.jar!/" />
+      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/extent2.42.1/mongodb-driver-3.0.4.jar!/" />
+      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/extent2.42.1/bson-3.0.4.jar!/" />
+      <root url="jar://C:/Automation/FinalProject/FinalProjectDrivers/extent2.42.1/mongodb-driver-core-3.0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

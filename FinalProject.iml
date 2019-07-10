@@ -6,10 +6,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Infrastructure" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TestCases" isTestSource="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="SeleniumWebDriver" level="project" />
-    <orderEntry type="library" name="TestNG-6.14" level="project" />
-    <orderEntry type="library" name="Extentreports-4.0" level="project" />
+    <orderEntry type="jdk" jdkName="Java" jdkType="JavaSDK" />
+    <orderEntry type="library" exported="" name="TestNG-6.14" level="project" />
+    <orderEntry type="library" exported="" name="SeleniumWebDriver" level="project" />
+    <orderEntry type="library" exported="" name="com.relevantcodes:extentreports:2.41.2" level="project" />
+    <orderEntry type="library" name="CommonIo2.6" level="project" />
   </component>
 </module>

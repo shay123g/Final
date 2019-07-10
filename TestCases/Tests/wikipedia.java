@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 public class wikipedia extends CommonOps
 {
@@ -20,9 +21,9 @@ public class wikipedia extends CommonOps
 
     }
     @BeforeMethod
-    public void doBeforeMethod()
+    public void doBeforeMethod(Method method)
     {
-        InitReportTest("TestName","TestDescription");
+        InitReportTest(method.getName().split("_")[0],method.getName().split("_")[1]);
     }
     @AfterClass
     public void CloseSession()
