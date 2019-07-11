@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Sikuli">
+    <CLASSES>
+      <root url="file://C:/Automation/FinalProject/FinalProjectDrivers/Sikuli" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://C:/Automation/FinalProject/FinalProjectDrivers/Sikuli" recursive="false" />
+  </library>
+</component>
