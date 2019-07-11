@@ -70,7 +70,7 @@ public class CommonOps extends Base
     }
     public static void InstanceReport() throws IOException, SAXException, ParserConfigurationException
     {
-        extent=new ExtentReports(getData("reportfiltepath")+getData("reportfilename")+".html");
+        extent=new ExtentReports(getData("reportfiltepath")+ "Execution_"+ timestamp +"/"+ getData("reportfilename")+".html");
     }
     public static void InitReportTest(String TestName,String TestDescription)
     {
@@ -89,7 +89,7 @@ public class CommonOps extends Base
     public static String TakeSS() throws IOException, ParserConfigurationException, SAXException
     {
         String filename="Screenshot-"+new SimpleDateFormat(("yyyyMMddHHmmss'.jpg'")).format(new Date());
-        String path= getData("reportfiltepath")+filename;
+        String path= getData("reportfiltepath")+ "Execution_"+ timestamp +"/"+filename;
         File SrcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(SrcFile, new File(path));
         return path;
