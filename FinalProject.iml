@@ -12,6 +12,6 @@
     <orderEntry type="library" exported="" name="SeleniumWebDriver" level="project" />
     <orderEntry type="library" exported="" name="com.relevantcodes:extentreports:2.41.2" level="project" />
     <orderEntry type="library" name="CommonIo2.6" level="project" />
-    <orderEntry type="library" name="Sikuli" level="project" />
+    <orderEntry type="library" name="sikulixapi" level="project" />
   </component>
 </module>

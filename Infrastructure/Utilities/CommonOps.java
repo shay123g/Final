@@ -8,6 +8,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.sikuli.script.Screen;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -16,6 +21,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -51,6 +57,7 @@ public class CommonOps extends Base
             }
         }
         driver.manage().window().maximize();
+        screen=new Screen();
         driver.get(getData("url"));
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -93,6 +100,31 @@ public class CommonOps extends Base
         File SrcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(SrcFile, new File(path));
         return path;
+    }
+
+    @BeforeClass
+    public void StartSession() throws IOException, SAXException, ParserConfigurationException {
+        InitBrowser(getData("BrowserType"));
+        ManagePages.Init();
+        InstanceReport();
+
+    }
+    @BeforeMethod
+    public void doBeforeMethod(Method method)
+    {
+        InitReportTest(method.getName().split("_")[0],method.getName().split("_")[1]);
+    }
+    @AfterClass
+    public void CloseSession()
+    {
+        driver.quit();
+        FinalizeExtentReport();
+
+    }
+    @AfterMethod
+    public void doAfterTest()
+    {
+        FinalizeReportTest();
     }
 
 }
