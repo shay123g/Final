@@ -3,11 +3,13 @@
  */
 package Utilities;
 
+import PageObjects_Mortgage.mainScreen;
 import PageObjects_Wikipedia.mainPage;
 import PageObjects_Wikipedia.resultPage;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.sikuli.script.Screen;
 
 import java.text.SimpleDateFormat;
@@ -20,14 +22,18 @@ public class Base
 {
     protected static WebDriver driver;
     public static Screen screen;
-
-    protected static mainPage WipediaMain;
-    protected static resultPage WipediaResults;
+    public static DesiredCapabilities dc = new DesiredCapabilities();
+    public static mainPage WipediaMain;
+    public static resultPage WipediaResults;
+    public static mainScreen mortgageMain;
 
     public static ExtentReports extent;
     public static ExtentTest test;
 
     public static String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(Calendar.getInstance().getTime());
+
+
+
 
 
 }

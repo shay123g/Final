@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
-    <!--URL-->
+    <!--Platform-->
+    <AutomationType>Mobile</AutomationType>   <!--Web/Mobile/API/Desktop/Electron-->
+   <!--URL-->
     <url>https://www.wikipedia.org/</url>
     <!--Web-->
     <BrowserType>CHROME</BrowserType>
@@ -9,4 +11,5 @@
     <!--Reports-->
     <reportfiltepath>C:/tpm1/</reportfiltepath>
     <reportfilename>TestExecution</reportfilename>
+
 </Configuration>

@@ -2,6 +2,9 @@ package Utilities;
 
 
 import com.relevantcodes.extentreports.ExtentReports;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -22,6 +25,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -75,6 +80,16 @@ public class CommonOps extends Base
         WebDriver local_driver=new FirefoxDriver();
         return local_driver;
     }
+
+    public static void initMobile() throws MalformedURLException
+    {
+        dc.setCapability(MobileCapabilityType.UDID, "ad0117020c03f11a29");
+        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.shivgadhia.android.ukMortgageCalc");
+        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".MainActivity");
+        driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), dc);
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+    }
+
     public static void InstanceReport() throws IOException, SAXException, ParserConfigurationException
     {
         extent=new ExtentReports(getData("reportfiltepath")+ "Execution_"+ timestamp +"/"+ getData("reportfilename")+".html");
@@ -104,7 +119,10 @@ public class CommonOps extends Base
 
     @BeforeClass
     public void StartSession() throws IOException, SAXException, ParserConfigurationException {
-        InitBrowser(getData("BrowserType"));
+        if (getData("AutomationType").toLowerCase().equals("web"))
+              InitBrowser(getData("BrowserType"));
+        else if (getData("AutomationType").toLowerCase().equals("mobile"))
+            initMobile();
         ManagePages.Init();
         InstanceReport();
 
